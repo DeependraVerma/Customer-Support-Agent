@@ -1,6 +1,6 @@
 from crewai import Task
 from agents import support_agent, support_quality_assurance_agent
-from tools import tool
+from tools import docs_scrape_tool
 
 inquiry_resolution = Task(
     description=(
@@ -23,7 +23,7 @@ inquiry_resolution = Task(
 		"leaving no questions unanswered, and maintain a helpful and friendly "
 		"tone throughout."
     ),
-	tools=[tool],
+	tools=[docs_scrape_tool],
     agent=support_agent,
 )
 
@@ -52,5 +52,5 @@ quality_assurance_review = Task(
 	    "but maintain a professional and friendly tone throughout."
     ),
     agent=support_quality_assurance_agent,
-    tools=[tool]
+    tools=[docs_scrape_tool]
 )

@@ -3,15 +3,11 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-#docs_scrape_tool = ScrapeWebsiteTool(
- #   website_url="https://cloud.google.com/speech-to-text/docs/speech-to-text-requests"
-#)
-
-
 os.environ['SERPER_API_KEY'] = os.getenv('SERPER_API_KEY')
 
+docs_scrape_tool = ScrapeWebsiteTool(
+   website_url="https://cloud.google.com/speech-to-text/docs/speech-to-text-requests")
 
-from crewai_tools import SerperDevTool
-
+#Website_Search_Tool = WebsiteSearchTool("https://cloud.google.com/speech-to-text/docs/speech-to-text-requests")
 # Initialize the tool for internet searching capabilities
-tool = SerperDevTool()
+#tool = SerperDevTool()
